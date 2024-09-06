@@ -17,6 +17,7 @@ public class DriverManager {
         page = context.newPage();
     }
 
+
     public static Page getPage() {
         return page;
     }
