@@ -33,4 +33,12 @@ public class HomeSteps {
     public void userSelectsDestination() {
         homePage.clickOnDestination();
     }
+
+    @When("user clicks on global icon")
+    public void userClicksOnGlobalIcon() {homePage.clickOnGlobalIcon();
+    }
+
+    @And("user selects currency")
+    public void userSelectsCurrency() {homePage.clickOnCurrency();
+    }
 }
