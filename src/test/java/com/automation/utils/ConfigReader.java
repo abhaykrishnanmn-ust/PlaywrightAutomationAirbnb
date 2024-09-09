@@ -17,8 +17,12 @@ public class ConfigReader {
         }
     }
 
-    public static String getConfigValue(String key) {
+    public static String getValue(String key) {
         return prop.getProperty(key);
+    }
+
+    public static void setValue(String key, String value) {
+        prop.setProperty(key, value);
     }
 
 }
