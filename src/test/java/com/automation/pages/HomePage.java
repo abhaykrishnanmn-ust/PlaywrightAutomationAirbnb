@@ -126,7 +126,7 @@ public class HomePage extends BasePage {
         currencyVerification = page.locator("//span[text()='Choose a currency']//descendant-or-self::span");
         wifi = page.locator("//button[@id='filter-item-amenities-4']");
         instantBook = page.locator("//button[@id='filter-item-ib']");
-        favourite = page.locator("//button[@aria-pressed=\"false\"]//descendant::span//descendant::span");
+        favourite = page.locator("//span[text()='The most loved homes on Airbnb']");
         hotel = page.locator("//span[text()='Hotel']");
         propertyType = page.locator("//h2[text()='Property type']");
         accessibility = page.locator("//h2[text()='Accessibility features']");
@@ -137,8 +137,8 @@ public class HomePage extends BasePage {
         hostLanguageSelect = page.locator("//div[text()='English']");
         show = page.locator("//div[@class='ptiimno atm_7l_1p8m8iw dir dir-ltr']");
         currencyDisplayedOnFooter = page.locator("//div[@class='_3qymq']/preceding-sibling::div//span[2]/button/span[3]");
-        meetYourHostName = page.locator("//div[@data-section-id=\"MEET_YOUR_HOST\"]//h3//span");
-        aboutMeetYourHost = page.locator("//div[@data-testid=\"user-profile-content\"]//span");
+        meetYourHostName = page.locator("//div[@data-section-id='MEET_YOUR_HOST']//h3//span");
+        aboutMeetYourHost = page.locator("//div[@data-testid='user-profile-content']//span");
     }
 
     public void openWebsite() {
@@ -394,7 +394,13 @@ public class HomePage extends BasePage {
         thingsToDo.click();
     }
 
-    public void clickOnFarm() {
-        selectFarm.click();
+    public void clickOnFarm(String location) {
+        if (location.equals("Amazing views")) {
+            selectAmazingViews.click();
+        } else if (location.equals("Beachfront")) {
+            selectBeachfront.click();
+        } else {
+            selectFarm.click();
+        }
     }
 }

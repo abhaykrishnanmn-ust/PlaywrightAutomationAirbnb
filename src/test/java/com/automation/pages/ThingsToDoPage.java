@@ -13,7 +13,7 @@ public class ThingsToDoPage extends BasePage{
 
     public ThingsToDoPage() {
         search = page.locator("//span[@class='tmel3e0 dir dir-ltr']");
-        card = page.locator("//a[@target='_blank']").nth(1);
+        card = page.locator("//div[@itemprop='itemListElement']").nth(1);
     }
 
     public void clickOnSearch() {

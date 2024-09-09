@@ -207,7 +207,7 @@ public class HomeSteps {
     }
 
     @When("user click on {string}")
-    public void userClickOn(String place) {
-        homePage.clickOnFarm();
+    public void userClickOn(String location) {
+        homePage.clickOnFarm(location);
     }
 }
