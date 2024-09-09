@@ -210,4 +210,9 @@ public class HomeSteps {
     public void userClickOn(String location) {
         homePage.clickOnFarm(location);
     }
+
+    @When("user click on search button")
+    public void userClickOnSearchButton() {
+        homePage.clickOnSearch();
+    }
 }
