@@ -90,7 +90,7 @@ public class HomePage extends BasePage {
         fetchNoOfPeoplesFromUserInput = page.locator("//div[text()='Who']/following-sibling::div");
         searchButton = page.locator("//button[@data-testid='structured-search-input-search-button']");
         fetchUserInputExperienceDates = page.locator("//div[text()='Date']/following-sibling::div");
-        homePageContent = page.locator("//span[text()]/ancestor::label");
+        homePageContent = page.locator("//span[text()]/ancestor::label").first();
         globeButton = page.locator("//div[@class='_pvfq6t']/button");
         selectLanguageButton = page.locator("//button[text()='Language and region']");
         selectLanguage = page.locator("//div[text()='Dansk']/..");
