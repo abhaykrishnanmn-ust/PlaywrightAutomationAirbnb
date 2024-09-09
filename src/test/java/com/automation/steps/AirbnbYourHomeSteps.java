@@ -8,16 +8,9 @@ import org.junit.Assert;
 public class AirbnbYourHomeSteps {
     AirbnbYourHomePage airbnbYourHomePage;
 
-    public AirbnbYourHomeSteps() {
-
-        this.airbnbYourHomePage = new AirbnbYourHomePage(PlaywrightDriver.getPage());
-    }
-
     @Then("verify Airbnb your home is displayed with text {string}")
     public void verify_airbnb_your_home_is_displayed_with_text(String message) {
-
         Assert.assertTrue(airbnbYourHomePage.verifyAirbnbYourHomeMessage(message));
-
     }
 
     @When("user uses slider")
@@ -28,6 +21,5 @@ public class AirbnbYourHomeSteps {
     @Then("verify the price is changing")
     public void verifyThePriceIsChanging() {
         Assert.assertTrue(airbnbYourHomePage.verifyPriceChange());
-
     }
 }
