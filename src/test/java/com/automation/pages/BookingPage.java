@@ -1,5 +1,6 @@
 package com.automation.pages;
 
+import com.automation.utils.ConfigReader;
 import com.microsoft.playwright.Locator;
 
 
@@ -37,7 +38,7 @@ public class BookingPage  extends BasePage{
     public boolean verifyCheckInDate() {
         closeTranslate.click();
         String checkInDateFetched = fetchCheckInDate.textContent();
-        return checkInDateFetched.contains(expectedCheckInDate);
+        return checkInDateFetched.contains(ConfigReader.getValue(expectedCheckInDate));
     }
 
     public boolean verifyCheckOutDate() {
