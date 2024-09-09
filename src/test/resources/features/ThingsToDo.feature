@@ -8,3 +8,4 @@ Feature: Verify the details
     When user search is performed
     And user selects first card
     Then verify displayed details with the text
+      |What you'll do|

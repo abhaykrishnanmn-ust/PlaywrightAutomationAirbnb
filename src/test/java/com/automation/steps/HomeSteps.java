@@ -45,10 +45,7 @@ public class HomeSteps {
         homePage.selectNumberOfPeople();
     }
 
-    @When("user clicks on search button")
-    public void userClicksOnSearchButton() {
-        homePage.clickOnSearch();
-    }
+
 
     @When("user clicks on experiences")
     public void userClicksOnExperiences() {
