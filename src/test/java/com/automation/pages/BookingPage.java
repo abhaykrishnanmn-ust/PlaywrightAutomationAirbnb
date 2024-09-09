@@ -4,8 +4,8 @@ import com.automation.utils.ConfigReader;
 import com.microsoft.playwright.Locator;
 
 
-public class BookingPage  extends BasePage{
-
+public class BookingPage extends BasePage{
+    
     Locator clickOnCard;
     Locator fetchCheckInDate;
     Locator fetchCheckOutDate;
@@ -27,7 +27,7 @@ public class BookingPage  extends BasePage{
     }
 
     public boolean isSearchedPageIsDisplayed() {
-        return true;
+        return true; // Implement a real check if necessary
     }
 
     public void clickOnFirstCard() {
@@ -37,18 +37,18 @@ public class BookingPage  extends BasePage{
 
     public boolean verifyCheckInDate() {
         closeTranslate.click();
-        String checkInDateFetched = fetchCheckInDate.textContent();
-        return checkInDateFetched.contains(ConfigReader.getValue(expectedCheckInDate));
+        String checkInDateFetched = fetchCheckInDate.textContent().trim();
+        return checkInDateFetched.equals(ConfigReader.getValue("expectedCheckInDate"));
     }
 
     public boolean verifyCheckOutDate() {
-        String checkOutDateFetched = fetchCheckOutDate.textContent();
-        return checkOutDateFetched.contains(expectedCheckOutDate);
+        String checkOutDateFetched = fetchCheckOutDate.textContent().trim();
+        return checkOutDateFetched.equals(ConfigReader.getValue("expectedCheckOutDate"));
     }
 
     public boolean verifyNoOfPersons() {
-        String noOfPersonsFetched = fetchNoOfPersons.textContent();
-        return noOfPersonsFetched.contains(expectedNoOfPersons);
+        String noOfPersonsFetched = fetchNoOfPersons.textContent().trim();
+        return noOfPersonsFetched.equals(ConfigReader.getValue("expectedNoOfPersons"));
     }
 
     public void clickOnAnyCard() {
@@ -57,8 +57,8 @@ public class BookingPage  extends BasePage{
 
     public void verifyPrice() {
         closeTranslate.click();
-        String displayPrice = price.textContent();
-        String displayTotalPrice = totalPrice.textContent();
+        String displayPrice = price.textContent().trim();
+        String displayTotalPrice = totalPrice.textContent().trim();
         System.out.println(displayPrice + "===" + displayTotalPrice);
     }
 }

@@ -5,6 +5,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+
 
 public class BookingSteps {
     BookingPage bookingPage = new BookingPage();
