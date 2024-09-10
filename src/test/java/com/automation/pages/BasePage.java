@@ -13,16 +13,10 @@ public class BasePage {
     }
 
     public void switchToNewWindow() {
-
         String currentPageUrl = page.url();
-
-
         Page newPage = page.context().newPage();
         String newPageUrl = newPage.url();
-
         ConfigReader.setValue("windowUrl", currentPageUrl);
-
-
         page.context().pages().forEach(p -> {
             if (p.url().equals(newPageUrl)) {
                 page = p;
