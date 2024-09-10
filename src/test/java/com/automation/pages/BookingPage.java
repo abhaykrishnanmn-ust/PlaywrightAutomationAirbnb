@@ -36,17 +36,20 @@ public class BookingPage extends BasePage{
     }
 
     public boolean verifyCheckInDate() {
+        switchToNewWindow();
         closeTranslate.click();
         String checkInDateFetched = fetchCheckInDate.textContent().trim();
         return checkInDateFetched.equals(ConfigReader.getValue("expectedCheckInDate"));
     }
 
     public boolean verifyCheckOutDate() {
+        switchToNewWindow();
         String checkOutDateFetched = fetchCheckOutDate.textContent().trim();
         return checkOutDateFetched.equals(ConfigReader.getValue("expectedCheckOutDate"));
     }
 
     public boolean verifyNoOfPersons() {
+        switchToNewWindow();
         String noOfPersonsFetched = fetchNoOfPersons.textContent().trim();
         return noOfPersonsFetched.equals(ConfigReader.getValue("expectedNoOfPersons"));
     }
