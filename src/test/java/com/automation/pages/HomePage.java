@@ -90,7 +90,7 @@ public class HomePage extends BasePage {
         fetchCheckOutDateFromUserInput = page.locator("//div[text()='Check out']/following-sibling::div");
         clickOnCheckOutDate = page.locator("//div[text()='Check out']");
         clickOnAddGuest = page.locator("//div[text()='Add guests']/parent::div");
-        addAdults = page.locator("//h1[@id='searchFlow-title-label-adults']/ancestor::section/following-sibling::div/button[2]");
+        addAdults = page.locator("//button[@data-testid='stepper-adults-increase-button']");
         fetchNoOfPeoplesFromUserInput = page.locator("//div[text()='Who']/following-sibling::div");
         searchButton = page.locator("//button[@data-testid='structured-search-input-search-button']");
         fetchUserInputExperienceDates = page.locator("//div[text()='Date']/following-sibling::div");
