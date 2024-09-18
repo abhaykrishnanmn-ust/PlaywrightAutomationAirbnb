@@ -1,4 +1,5 @@
 Feature: Validate language functionality
+
   Scenario: Verify language option
     Given user opens website
     And verify user is on homepage

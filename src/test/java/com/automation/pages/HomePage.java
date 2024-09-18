@@ -98,7 +98,7 @@ public class HomePage extends BasePage {
         globeButton = page.locator("//div[@class='_pvfq6t']/button");
         selectLanguageButton = page.locator("//button[text()='Language and region']");
         selectLanguage = page.locator("//div[text()='Dansk']/..");
-        languageSelected = page.locator("//a[@class='_ci5ckgc']/div");
+        languageSelected = page.locator("//a[@class='_ci5ckgc']/div").first();
         staysInputSearchLocation = page.locator("//div[contains(text(),'Bali')]");
         airbnbYourHome = page.locator("//nav[@aria-label='Profile']/div/a");
         selectBeachfront = page.locator("//span[text()='Beachfront']/ancestor::label");
