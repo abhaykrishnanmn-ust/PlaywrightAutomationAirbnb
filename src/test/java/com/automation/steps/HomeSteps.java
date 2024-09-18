@@ -239,4 +239,14 @@ public class HomeSteps {
         Assert.assertTrue(homePage.verifyFilterBedCount());
         Assert.assertTrue(homePage.verifyFilterPrice());
     }
+
+    @Then("verify currency options are displayed")
+    public void verifyCurrencyOptionsAreDisplayed() {
+        homePage.lineOnCurrency();
+    }
+
+    @Then("verify currency is changed to the selected currency")
+    public void verifyCurrencyIsChangedToTheSelectedCurrency() {
+        Assert.assertTrue(homePage.verifyCurrency());
+    }
 }
