@@ -8,7 +8,7 @@ public class HelpCenterPage extends BasePage {
     Locator helpCenterText;
 
     public HelpCenterPage() {
-        helpCenterText = page.locator("//div[@class='hoakkap dir dir-ltr']");
+        helpCenterText = page.locator("//div[text()='Hi, how can we help?']");
     }
 
     public boolean verifyDisplayedMessage(String message) {

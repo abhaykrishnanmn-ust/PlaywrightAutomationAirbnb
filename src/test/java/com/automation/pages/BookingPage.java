@@ -16,7 +16,7 @@ public class BookingPage extends BasePage{
     Locator totalPrice;
 
     public BookingPage() {
-        clickOnCard = page.locator("//div[@itemprop='itemListElement']");
+        clickOnCard = page.locator("//div[@itemprop='itemListElement']").first();
         fetchCheckInDate = page.locator("//div[@data-testid='change-dates-checkIn']");
         fetchCheckOutDate = page.locator("//div[@data-testid='change-dates-checkOut']");
         fetchNoOfPersons = page.locator("//div[text()='Guests']/following-sibling::div//span");
