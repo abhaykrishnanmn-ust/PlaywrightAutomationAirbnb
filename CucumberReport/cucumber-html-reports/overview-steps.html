@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Automation</td>
+              <td>1</td>
+            <td>18 Sep 2024, 12:13</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Duration</th>
+            <th>Average</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">com.automation.steps.AirbnbYourHomeSteps.userUsesSlider()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.AirbnbYourHomeSteps.verifyThePriceIsChanging()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.AirbnbYourHomeSteps.verify_airbnb_your_home_is_displayed_with_text(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="2980700">002ms</td>
+              <td class="duration" data-value="1490350">001ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.BookingSteps.userSelectsAnyCard()</td>
+              <td>1</td>
+              <td class="duration" data-value="8176830100">8s 176ms</td>
+              <td class="duration" data-value="8176830100">8s 176ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.BookingSteps.user_selects_first_card()</td>
+              <td>4</td>
+              <td class="duration" data-value="105448694200">1m 45s 448ms</td>
+              <td class="duration" data-value="26362173550">26s 362ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.BookingSteps.verifyThePriceDistributionIsEqualsTotalPrice()</td>
+              <td>1</td>
+              <td class="duration" data-value="30007938700">30s 007ms</td>
+              <td class="duration" data-value="30007938700">30s 007ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.BookingSteps.verify_displayed_details_with_the_input_details()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.BookingSteps.verify_searched_page_is_displayed()</td>
+              <td>2</td>
+              <td class="duration" data-value="3988400">003ms</td>
+              <td class="duration" data-value="1994200">001ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HelpCenterSteps.verify_help_centre_page_is_displayed_with_text(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="30010420000">30s 010ms</td>
+              <td class="duration" data-value="30010420000">30s 010ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.selectCheckInAndCheckOutDate()</td>
+              <td>2</td>
+              <td class="duration" data-value="3429572900">3s 429ms</td>
+              <td class="duration" data-value="1714786450">1s 714ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.selectNumberOfPeople()</td>
+              <td>2</td>
+              <td class="duration" data-value="1149911600">1s 149ms</td>
+              <td class="duration" data-value="574955800">574ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.selectTheCurrency()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClickOn(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="5239455000">5s 239ms</td>
+              <td class="duration" data-value="2619727500">2s 619ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClickOnSearchButton()</td>
+              <td>2</td>
+              <td class="duration" data-value="512917500">512ms</td>
+              <td class="duration" data-value="256458750">256ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClicksOnAirbnbYourHome()</td>
+              <td>2</td>
+              <td class="duration" data-value="1306406700">1s 306ms</td>
+              <td class="duration" data-value="653203350">653ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClicksOnFilter()</td>
+              <td>1</td>
+              <td class="duration" data-value="1397916400">1s 397ms</td>
+              <td class="duration" data-value="1397916400">1s 397ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClicksOnGlobalIcon()</td>
+              <td>3</td>
+              <td class="duration" data-value="2618195000">2s 618ms</td>
+              <td class="duration" data-value="872731666">872ms</td>
+              <td class="failed">66.67%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClicksOnLanguage()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClicksOnProfileIcon()</td>
+              <td>1</td>
+              <td class="duration" data-value="409286700">409ms</td>
+              <td class="duration" data-value="409286700">409ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClicksOnShow()</td>
+              <td>1</td>
+              <td class="duration" data-value="584234000">584ms</td>
+              <td class="duration" data-value="584234000">584ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClicksOnTheHelpCentreOption()</td>
+              <td>1</td>
+              <td class="duration" data-value="1061670400">1s 061ms</td>
+              <td class="duration" data-value="1061670400">1s 061ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClicksOnThingsToDo()</td>
+              <td>1</td>
+              <td class="duration" data-value="4364573700">4s 364ms</td>
+              <td class="duration" data-value="4364573700">4s 364ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userClicksOnWhere()</td>
+              <td>2</td>
+              <td class="duration" data-value="1071036900">1s 071ms</td>
+              <td class="duration" data-value="535518450">535ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userEntersMinimumPriceAndMaximumPrice(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1178835300">1s 178ms</td>
+              <td class="duration" data-value="1178835300">1s 178ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userOpensWebsite()</td>
+              <td>10</td>
+              <td class="duration" data-value="58051438200">58s 051ms</td>
+              <td class="duration" data-value="5805143820">5s 805ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsBedroomsAndBeds(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="536314700">536ms</td>
+              <td class="duration" data-value="536314700">536ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsCurrency()</td>
+              <td>1</td>
+              <td class="duration" data-value="892072900">892ms</td>
+              <td class="duration" data-value="892072900">892ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsDestination()</td>
+              <td>1</td>
+              <td class="duration" data-value="1172124500">1s 172ms</td>
+              <td class="duration" data-value="1172124500">1s 172ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsDestinationBy(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="1545601800">1s 545ms</td>
+              <td class="duration" data-value="772800900">772ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsFilterByAccessibilityFeatures()</td>
+              <td>1</td>
+              <td class="duration" data-value="716082900">716ms</td>
+              <td class="duration" data-value="716082900">716ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsFilterByEntireHome()</td>
+              <td>1</td>
+              <td class="duration" data-value="3691342800">3s 691ms</td>
+              <td class="duration" data-value="3691342800">3s 691ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsGuestFavouritesInTopTierStays()</td>
+              <td>1</td>
+              <td class="duration" data-value="259953800">259ms</td>
+              <td class="duration" data-value="259953800">259ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsHotelPropertyType()</td>
+              <td>1</td>
+              <td class="duration" data-value="560716000">560ms</td>
+              <td class="duration" data-value="560716000">560ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsInstantBookInBookingOptions()</td>
+              <td>1</td>
+              <td class="duration" data-value="243017400">243ms</td>
+              <td class="duration" data-value="243017400">243ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsLanguageEnglishInFilter()</td>
+              <td>1</td>
+              <td class="duration" data-value="1310740000">1s 310ms</td>
+              <td class="duration" data-value="1310740000">1s 310ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsMeetYourHostOption()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsWifiInAmenities()</td>
+              <td>1</td>
+              <td class="duration" data-value="123518000">123ms</td>
+              <td class="duration" data-value="123518000">123ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verifyCurrencyIsChangedToTheSelectedCurrency()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verifyCurrencyOptionsAreDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="127812800">127ms</td>
+              <td class="duration" data-value="127812800">127ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verifyDisplayedDetailsWithTheText(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verifyDisplayedDetailsWithTheUserInterest()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verifyUserIsOnHomepage()</td>
+              <td>11</td>
+              <td class="duration" data-value="4421315900">4s 421ms</td>
+              <td class="duration" data-value="401937809">401ms</td>
+              <td class="failed">90.91%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verify_displayed_details_with_the_host_details()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verify_language_is_changed_to_the_selected_language()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verify_language_options_are_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="5983800">005ms</td>
+              <td class="duration" data-value="5983800">005ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.Hooks.cleanUp()</td>
+              <td>10</td>
+              <td class="duration" data-value="23548106700">23s 548ms</td>
+              <td class="duration" data-value="2354810670">2s 354ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.Hooks.setUp()</td>
+              <td>10</td>
+              <td class="duration" data-value="108728792800">1m 48s 728ms</td>
+              <td class="duration" data-value="10872879280">10s 872ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.SearchSteps.verify_map_page_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="1560920300">1s 560ms</td>
+              <td class="duration" data-value="1560920300">1s 560ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>48</td>
+            <td>99</td>
+            <td class="duration">6m 45s 470ms</td>
+            <td class="duration">4s 095ms</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
