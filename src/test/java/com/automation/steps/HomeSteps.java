@@ -6,13 +6,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+import org.junit.Assert;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class HomeSteps {
 
-    HomePage homePage=new HomePage();
+    HomePage homePage = new HomePage();
 
     @Given("user opens website")
     public void userOpensWebsite() {
@@ -44,7 +44,6 @@ public class HomeSteps {
     public void selectNumberOfPeople() {
         homePage.selectNumberOfPeople();
     }
-
 
 
     @When("user clicks on experiences")
@@ -211,5 +210,33 @@ public class HomeSteps {
     @When("user click on search button")
     public void userClickOnSearchButton() {
         homePage.clickOnSearch();
+    }
+
+    @Then("verify displayed details with the text")
+    public void verifyDisplayedDetailsWithTheText(String message) {
+        Assert.assertTrue(homePage.verifyThingsToDoMessage(message));
+    }
+
+    @Then("verify displayed details with the host details")
+    public void verify_displayed_details_with_the_host_details() {
+        Assert.assertTrue(homePage.verifyDisplayedDetailsOfHost());
+    }
+
+    @Then("verify language options are displayed")
+    public void verify_language_options_are_displayed() {
+        Assert.assertTrue(homePage.verifyLanguageIsDisplayed());
+    }
+
+    @Then("verify language is changed to the selected language")
+    public void verify_language_is_changed_to_the_selected_language() {
+        Assert.assertTrue(homePage.verifyLanguageIsChanged());
+    }
+
+    @Then("verify displayed details with the user interest")
+    public void verifyDisplayedDetailsWithTheUserInterest() {
+        Assert.assertTrue(homePage.verifyGuestFavourite());
+        Assert.assertTrue(homePage.verifyFilterBedroomCount());
+        Assert.assertTrue(homePage.verifyFilterBedCount());
+        Assert.assertTrue(homePage.verifyFilterPrice());
     }
 }

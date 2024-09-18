@@ -71,6 +71,10 @@ public class HomePage extends BasePage {
     Locator currencyDisplayedOnFooter;
     Locator meetYourHostName;
     Locator aboutMeetYourHost;
+    Locator cardPageGuestFavourite;
+    Locator bedroomCount;
+    Locator cardPageFilterPrice;
+    Locator bedCount;
 
     public HomePage() {
 
@@ -139,6 +143,10 @@ public class HomePage extends BasePage {
         currencyDisplayedOnFooter = page.locator("//div[@class='_3qymq']/preceding-sibling::div//span[2]/button/span[3]");
         meetYourHostName = page.locator("//div[@data-section-id='MEET_YOUR_HOST']//h3//span");
         aboutMeetYourHost = page.locator("//div[@data-testid='user-profile-content']//span");
+        cardPageGuestFavourite = page.locator("//div[@data-section-id='GUEST_FAVORITE_BANNER']");
+        bedroomCount = page.locator("//li[contains(text(),'bedrooms')]");
+        cardPageFilterPrice = page.locator("//div[@data-section-id='BOOK_IT_SIDEBAR']//span/div/following-sibling::span");
+        bedCount = page.locator("//li[contains(text(),'beds')]");
     }
 
     public void openWebsite() {
@@ -402,5 +410,27 @@ public class HomePage extends BasePage {
         } else {
             selectFarm.click();
         }
+    }
+
+    public boolean verifyGuestFavourite() {
+        return cardPageGuestFavourite.isVisible();
+    }
+
+    public boolean verifyFilterBedroomCount() {
+        int pageBedroomCount=Integer.parseInt(bedroomCount.textContent().substring(3,4));
+        int passedBedroomCount=Integer.parseInt(ConfigReader.getValue("filter.bedroom.count"));
+        return pageBedroomCount>passedBedroomCount;
+    }
+
+    public boolean verifyFilterBedCount() {
+        int pageBedCount=Integer.parseInt(bedCount.textContent().substring(3,4));
+        int passedBedCount=Integer.parseInt(ConfigReader.getValue("filter.bed.count"));
+        return pageBedCount>passedBedCount;
+    }
+
+    public boolean verifyFilterPrice() {
+        return Integer.parseInt(cardPageFilterPrice.textContent().split(" ")[0].substring(1).
+                replace(",",""))<=
+                Integer.parseInt(ConfigReader.getValue("filter.maximum.price"));
     }
 }
