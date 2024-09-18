@@ -32,7 +32,6 @@ public class BookingPage extends BasePage{
 
     public void clickOnFirstCard() {
         clickOnCard.click();
-        closeTranslate.click();
     }
 
     public boolean verifyCheckInDate() {

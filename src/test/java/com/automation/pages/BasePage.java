@@ -22,7 +22,7 @@ public class BasePage {
         }
     }
 
-    public void switchToNewWindow() {
+    public Page switchToNewWindow() {
         String currentPageUrl = page.url();
         Page newPage = page.context().newPage();
         String newPageUrl = newPage.url();
@@ -32,6 +32,7 @@ public class BasePage {
                 page = p;
             }
         });
+        return page;
     }
 }
 
