@@ -2,6 +2,7 @@ package com.automation.pages;
 
 import com.automation.utils.ConfigReader;
 import com.automation.utils.DriverManager;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
 public class BasePage {
@@ -10,6 +11,15 @@ public class BasePage {
 
     public BasePage() {
         page = DriverManager.getPage();
+    }
+
+    public boolean isPresent(Locator locator) {
+        try {
+            locator.waitFor(new Locator.WaitForOptions().setTimeout(500));
+            return locator.isVisible();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void switchToNewWindow() {

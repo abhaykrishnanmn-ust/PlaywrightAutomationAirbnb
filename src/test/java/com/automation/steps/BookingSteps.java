@@ -35,7 +35,6 @@ public class BookingSteps {
     @When("user selects any card")
     public void userSelectsAnyCard() {
         bookingPage.clickOnAnyCard();
-
     }
 
     @Then("verify the price distribution is equals total price")

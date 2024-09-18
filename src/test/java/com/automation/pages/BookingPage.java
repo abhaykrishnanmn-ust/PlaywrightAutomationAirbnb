@@ -21,7 +21,7 @@ public class BookingPage extends BasePage{
         fetchCheckOutDate = page.locator("//div[@data-testid='change-dates-checkOut']");
         fetchNoOfPersons = page.locator("//div[text()='Guests']/following-sibling::div//span");
         closeTranslate = page.locator("//button[@aria-label='Close']");
-        cardClick = page.locator("//div[@role='presentation']");
+        cardClick = page.locator("//div[@role='presentation']").first();
         price = page.locator("//span[@class='_1k4xcdh']");
         totalPrice = page.locator("//div[text()='Total before taxes']/parent::span/following-sibling::span//span[@class='_j1kt73']");
     }
@@ -56,7 +56,12 @@ public class BookingPage extends BasePage{
 
     public void clickOnAnyCard() {
         cardClick.click();
+        switchToNewWindow();
+        if(isPresent(closeTranslate)){
+            closeTranslate.click();
+        }
     }
+
 
     public void verifyPrice() {
         closeTranslate.click();
