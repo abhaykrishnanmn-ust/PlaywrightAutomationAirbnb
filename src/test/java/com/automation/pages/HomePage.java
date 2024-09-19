@@ -125,7 +125,7 @@ public class HomePage extends BasePage {
         filterMaximumPriceInput = page.locator("//input[@id='price_filter_max']");
         bedroomCountButton = page.locator("//button[@data-testid='stepper-filter-item-min_bedrooms-stepper-increase-button']");
         bedCountButton = page.locator("//button[@data-testid='stepper-filter-item-min_beds-stepper-increase-button']");
-        currencyOptions = page.locator("//h2[@elementtiming='LCP-target']");
+        currencyOptions = page.locator("//h2[@elementtiming='LCP-target']").first();
         newCurrency = page.locator("//div[text()='SAR – SR']");
         currencyVerification = page.locator("//span[text()='Choose a currency']//descendant-or-self::span");
         wifi = page.locator("//button[@id='filter-item-amenities-4']");
